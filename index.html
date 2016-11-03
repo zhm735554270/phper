@@ -1,9 +1,318 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>asd</title>
-</head>
-<body>
-<h1>我的第一次</h1>
-</body>
-</html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小明的博客</title>
+
+    <link href="index1_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index1_files/index.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    	<header class="container-fluid">
+    			<div class="container">
+    				<div class="col-md-8 col-xs-12 col-sm-8 title">
+	    				<h1>小明的博客</h1>
+	    			</div>
+
+	    			<div class="searchBox col-md-3 col-xs-12">
+	    				<form class="form-line">
+	    					<h2>
+	    						<input class="form-control" name="search" placeholder="输入内容后回车搜索" type="search">
+	    					</h2>
+
+	    				</form>
+	    			</div>
+    			</div>
+    	</header>
+
+
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid" id="nav">
+		  	<div class="row">
+		  		<div class="container">
+		  			<div class="col-md-12 col-xs-12 col-sm-12">
+		 					<!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navHidden" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						    
+						    </div>
+
+				    		<!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="navHidden">
+
+						      <ul class="nav navbar-nav">
+						        <li class="active">
+						        	<a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="http://3maio.com/html/php/safe.html">PHP</a></li>
+						        <li><a href="http://3maio.com/html/wechat.html">微信开发</a></li>
+						        <li><a href="http://3maio.com/html/index.html">Git</a></li>
+						        <li><a href="http://3maio.com/html/mysql/MySQL%E4%BC%98%E5%8C%96.html">MySQL</a></li>
+						   
+                    <li><a href="http://3maio.com/html/article.html">好文分享</a></li>
+                    <li><a href="http://3maio.com/html/tool.html">工具</a></li>
+                    <li><a href="http://3maio.com/html/others/list.html">杂谈</a></li>
+						      
+						      </ul>
+
+						    </div><!-- /.navbar-collapse -->
+					  </div><!-- /.container-fluid -->
+		  			</div>
+		  		</div>
+		  	</div>
+		   
+		</nav>
+
+		<!--主体部分-->
+		<section class="container-fluid">
+			<div class="container">
+
+				<div class="col-md-8 mainLeft">
+					<article class="post">
+						<div class="title-div">
+							<h2>
+								<a href="">prop与attr的区别</a>
+							</h2>
+							<div>
+								作者：小明 • 2016年5月8日
+							</div>
+						</div>
+
+
+						<div class="post-content">
+							<p>
+								<img class="img-responsive" src="index1_files/2016-04-16_182059.png" alt="">
+							</p>
+						</div>
+
+						<div class="readFull">
+							<a href="http://3maio.com/post/lumen-5-2-is-released/" class="btn btn-default">阅读全文</a>
+						</div>
+
+						<footer class="post-footer clearfix">
+					        <div class="pull-left tag-list">
+					            <i class="fa fa-folder-open-o"></i>
+					            <a href="http://3maio.com/tag/lumen/">jQuery</a>, <a href="http://3maio.com/tag/xin-ban-ben-fa-bu/">jQuery的prop()方法与attr()区别</a>
+					        </div>
+					        <div class="pull-right share">
+					        </div>
+    					</footer>
+					</article>
+
+                    <article class="post">
+                        <div class="title-div">
+                            <h2>
+                                <a href="">上传插件dropzone.js实例</a>
+                            </h2>
+                            <div>
+                                作者：梁芝 • 2016年2月8日
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <p>
+                                </p><p>dropzone.js默认是Ajax上传图片给服务器，那么如何获取到图片名呢？其实我们是可以通过dropzone的success函数获取到服务器返回的数据</p>
+                                <p>dropzone.js在HTML的配置如下；</p>
+                                <pre>                                   
+    Dropzone.autoDiscover = false;//防止报"Dropzone already attached."的错误
+        $(".dropzone").dropzone({
+        url: "__URL__/upload/",
+        addRemoveLinks: true,
+        dictRemoveLinks: "x",
+        dictCancelUpload: "x",
+        paramName:"userImg",
+        maxFiles: 10,
+        maxFilesize: 5,
+        acceptedFiles: "image/*",
+        init: function() {
+
+            //res为服务器响应回来的数据
+            this.on("success", function(file, res) {
+
+                //将json字符串转换成json对象
+                var obj = JSON.parse(res);
+
+                console.log(obj);
+                
+                if( obj.status == 200 ){
+
+                    //将服务器得到的数据生成一个隐藏域。做商品添加的时候就可以获取到了
+                    var input = '&lt;input type="hidden" name="'+obj.details.savename+'" value="'+obj.details.savepath+obj.details.savename+'" /&gt;';
+                    $('.myform').append(input);
+
+                }else{
+                    alert('上传失败');
+                }
+                
+
+                
+            });
+            this.on("removedfile", function(file) {
+                console.log("File " + file.name + "removed");
+            });
+        }
+    });
+
+    
+
+                               </pre>
+                            <p></p>
+                            <p>PHP的代码如下(Thinkphp代码)：</p>
+                            <pre>                                
+    public function upload()
+    {    
+
+        /*
+          添加商品 ：商品名、商品图片
+         */
+
+           // 实例化上传类    
+          $upload = new \Think\Upload();
+
+           // 设置附件上传大小    
+          $upload-&gt;maxSize   =     3145728 ;
+
+        // 设置附件上传类型   
+          $upload-&gt;exts      =     array('jpg', 'gif', 'png', 'jpeg');
+
+//A开发者写了upload()   B开发
+          // 设置附件上传目录   
+           $upload-&gt;savePath  =      './Public/Uploads/'; 
+
+
+          //返回上传信息
+          $info   =   $upload-&gt;uploadOne($_FILES['userImg']);   
+          // dump($info);exit;
+          if( !$info ) {
+            // 上传错误提示错误信息
+              // $this-&gt;error($upload-&gt;getError()); 
+              $data['status'] = 404;
+
+              //错误信息
+              $data['msg']    = $upload-&gt;getError();
+              
+              echo  json_encode($data);
+
+          }else{
+            // 上传成功 (图片路径、图片名字)
+              
+              $data['status']  = 200;
+              $data['msg']     = 'UPLOAD SUCCESS';
+
+              //图片原始名字
+              $data['details']['originName'] = $info['name'];
+              $data['details']['savename'] = $info['savename'];
+              $data['details']['savepath'] = $info['savepath'];
+
+              echo json_encode($data);
+          }
+   }
+                            </pre>
+                        </div>
+
+                        <div class="readFull">
+                            <a href="http://3maio.com/post/lumen-5-2-is-released/" class="btn btn-default">阅读全文</a>
+                        </div>
+
+                        <footer class="post-footer clearfix">
+                            <div class="pull-left tag-list">
+                                <i class="fa fa-folder-open-o"></i>
+                                <a href="http://3maio.com/tag/lumen/">dropzone.js</a>, <a href="http://3maio.com/tag/xin-ban-ben-fa-bu/">dropzone.js的使用实例</a>
+                            </div>
+                            <div class="pull-right share">
+                            </div>
+                        </footer>
+                    </article>
+
+
+					
+					<nav class="pagination" role="navigation">
+        				<a class="newer-posts" href="http://3maio.com/">
+        					<i class="fa fa-angle-left">&lt;</i>
+        				</a>
+    					<span class="page-number">第 1 页 ⁄ 共 2 页</span>
+        				<a class="older-posts" href="http://3maio.com/html/index.html">
+        					<i class="fa fa-angle-right">&gt;</i>
+        				</a>
+					</nav>
+				</div>
+				<aside class="col-md-3 hidden-sm hidden-xs mainRight ">
+					<div class="widget">
+						<div class="aside">
+							<h4>近期文章</h4>
+						</div>
+						<div class="content">
+              <p>
+                <a href="http://3maio.com/html/gitForGh-pages.html">
+                   如何在Github搭建自己的个人博客
+                </a>
+                
+              </p>
+							<p>
+								<a href="http://3maio.com/html/index.html">
+									 如何在Centos搭建Git服务器
+								</a>
+								
+							</p>
+
+							<p>
+							     <a href="http://3maio.com/html/mysql/MySQL%E4%BC%98%E5%8C%96.html">MySQL优化</a>
+								
+							</p>
+						</div>
+					</div>
+
+
+				</aside>
+
+
+			</div>
+
+		</section>
+
+    <footer>
+        
+        <table class="table table-border">
+          <caption><h3>友情链接</h3></caption>
+            <tbody><tr>
+              
+              <td><a href="http://www.phpsafe.com/">Poacher'Blog</a></td>
+              <td><a href="https://cs.phphub.org/">Laravel5.1 LTS 速查表</a></td>
+
+            </tr>
+
+        </tbody></table>
+      
+    </footer>
+
+   
+    <script src="index1_files/jquery.js"></script>
+  
+    <script src="index1_files/bootstrap.js"></script>
+
+    <script>
+      $('.noContent').click(function(){
+
+          var content = $(this).text();
+
+          alert('暂时没有'+content+'的内容,请期待');
+
+      });
+
+    </script>
+  
+
+</body></html>
