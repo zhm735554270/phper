@@ -21,7 +21,7 @@ a:hover{
     transition: all 0.2s ease-in-out;
 }
 header{
-	background: url('../images/home/headerBack.jpg');
+	background-color: pink);
 	padding:62px 0px;
 }
 header div.title{
