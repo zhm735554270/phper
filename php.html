@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>梁芝的博客</title>
+
+    <link href="PHP_files/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="PHP_files/index.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="__PUBLIC__/js/html5shiv.min.js"></script>
+      <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+        <header class="container-fluid">
+                <div class="container">
+                    <div class="col-md-8 col-xs-12 col-sm-8 title">
+                        <h1>cpphp</h1>
+                    </div>
+                </div>
+        </header>
+
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid" id="nav">
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navHidden" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </button>
+                            
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navHidden">
+
+                              <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="http://3maio.com/index.html">首页 <span class="sr-only">(current)</span></a></li>
+                              </ul>
+
+                            </div><!-- /.navbar-collapse -->
+                      </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
+           
+        </nav>
+
+        <!--主体部分-->
+        <section class="container-fluid">
+            <div class="container">
+
+                <div class="col-md-8 mainLeft">
+
+                    <article class="post">
+                        <div class="title-div">
+                            <h2>
+                                PHP安全-隐藏PHP
+                            </h2>
+                            <div>
+                                作者：梁芝 • 2016年7月15日
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;一般而言，通过隐藏的手段提高安全性被认为是作用不大的做法。但某些情况下，尽可能增加一份安全性都是值得去做的。</p>
+                            <p>一些简单的方法可以帮助隐藏PHP，这样做可以提供攻击者发现系统弱点的难度。在php.ini文件里设置</p><pre>expose_php = off</pre>可以减少他们获得有用信息的几率。
+
+                            <p>
+                                <strong>expose_php = On 的时候可以看到php的版本：</strong><br><br>
+                                <img src="PHP_files/2016-07-15_140929.png" alt="">
+
+                                <br>
+                                <strong>expose_php = Off后，看不到php的版本</strong>
+                                
+                                 <img src="PHP_files/2016-07-15_141103.png" alt="">
+                            </p>
+
+                            <p>
+                                
+                                另外一个策略就是让web服务器用PHP解析不同扩展名。无论是通过.htaccess文件还是
+                                Apache的配置文件，都可以设置能误导攻击者的文件扩展名：
+
+                                </p><p>
+                                    例子：把PHP隐藏为另外一种语言
+                                  </p><pre>AddType application/x-httpd-php .asp .py .pl</pre>
+                                <p></p>
+
+                                <p>
+                                    <b>还可以设置httpd.conf来隐藏apache信息</b>
+                                    </p><pre>ServerTokens Prod
+ServerSignature Off</pre>
+                                    这样设置后在响应头也是看不了apache的相关信息了。
+                                <p></p>
+                            <p></p>
+                        </div>
+
+                    </article>
+                    
+                
+                </div>
+                <aside class="col-md-3 hidden-sm hidden-xs mainRight ">
+                    <div class="widget">
+                        <div class="aside">
+                            <h4>近期文章</h4>
+                        </div>
+                        <div class="content">
+                            <p>
+                                <a href="#">
+                                    搭建Git服务器
+                                </a>
+                                
+                            </p>
+                            <p>
+                                <a href="">
+                                    从HTTP协议角度看GET与POST请求的区别
+                                </a>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+                </aside>
+
+
+            </div>
+
+
+
+        </section>
+               <nav class="pagination" role="navigation">
+
+              <span class="page-number">第 1 页 ⁄ 共 2 页</span>
+              <a class="newer-posts" href="http://3maio.com/html/php/safe1.html">
+                <i class="fa fa-angle-left">&gt;</i>
+              </a>
+            </nav>   
+   
+    <script src="PHP_files/jquery.js"></script>
+  
+    <script src="PHP_files/bootstrap.js"></script>
+  
+
+
+</body></html>
